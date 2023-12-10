@@ -1,0 +1,25 @@
+<?php
+
+// Question 58 : Length of the last word
+
+class Solution {
+
+    /**
+     * @param String $s
+     * @return Integer
+     */
+    function lengthOfLastWord($s) {
+        $data = explode(' ',$s);
+	$count = count($data);
+	$i = $count-1;
+	while($i >= 0){
+		if($data[$i] != ''){
+			$output = $data[$i];
+			return strlen($output);
+		}
+		$i--;
+	}
+    }
+}
+
+?>
