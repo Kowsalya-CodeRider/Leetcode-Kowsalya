@@ -1,0 +1,33 @@
+<?php
+// Question 80 : Remove duplicates from sorted array II
+
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function removeDuplicates(&$nums) {
+
+       $new = array_count_values($nums);
+	$j = 0;
+	$output = array();
+	foreach($new as $key => $value){
+		if($value > 2){
+			$j += 2;
+			$count = 2;
+		} else {
+			$j += $value;
+			$count = $value;
+		}
+		for($k = 0; $k < $count; $k++){
+			array_push($output,$key);
+		}
+	}
+    $nums = $output;
+	return $j;
+
+    }
+}
+
+?>
