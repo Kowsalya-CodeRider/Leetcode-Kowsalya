@@ -1,0 +1,24 @@
+<?php
+// Question on : 169 - Majority Element 
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @return Integer
+     */
+    function majorityElement($nums) {
+        $data = array_count_values($nums);
+        $times = array();
+        foreach($data as $key => $value){
+            $times[$key] = $value/2;
+        }
+        $max = max($times);
+        foreach($times as $key => $value){
+            if($max == $value){
+                return $key;
+            }
+        }
+    }
+}
+
+?>
