@@ -1,0 +1,31 @@
+<?php
+// Question No : 88 - Merge Sorted Array
+class Solution {
+
+    /**
+     * @param Integer[] $nums1
+     * @param Integer $m
+     * @param Integer[] $nums2
+     * @param Integer $n
+     * @return NULL
+     */
+    function merge(&$nums1, $m, $nums2, $n) {
+        $num1result = array();
+	$i = 0;
+	while($i < $m){
+		$num1result[$i] = $nums1[$i];
+		$i++;
+	}
+	$num2result = array();
+	$j = 0;
+	while($j < $n){
+		$num2result[$j] = $nums2[$j];
+		$j++;
+	}
+	$num3result = array_merge($num1result,$num2result);
+	sort($num3result);
+	$nums1 = $num3result;
+	return $nums1;
+    }
+}
+?>
