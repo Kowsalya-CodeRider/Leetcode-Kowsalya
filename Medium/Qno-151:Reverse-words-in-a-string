@@ -2,7 +2,7 @@
 
 // Question no - 151: Reverse words in a string
 
-class Solution {
+class Solution { 
 
     /**
      * @param String $s
