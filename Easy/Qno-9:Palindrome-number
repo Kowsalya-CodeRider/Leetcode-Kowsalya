@@ -1,0 +1,28 @@
+<?php
+// Question no : 09 - Palindrome Number
+class Solution {
+
+    /**
+     * @param Integer $x
+     * @return Boolean
+     */
+    function isPalindrome($x) {
+        $xabs = abs($x);
+        if($x != $xabs){
+            return false;
+        } else {
+            $newarray = array();
+            $x1 = str_split($x);
+            for($i = count($x1)-1; $i >= 0; $i--){
+                $newarray[$i] = $x1[$i];
+            }
+            $x2 = implode('',$newarray);
+            if($x == $x2){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
+?>
